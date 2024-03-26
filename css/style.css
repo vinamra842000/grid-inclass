@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    width: 100%;
+    height: 100%;
+}
+
+#grid-container>div {
+    background-color: aquamarine;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#grid-header,
+#grid-footer {
+    grid-column: 1/4;
+    height: 5vh;
+}
+
+#grid-nav,
+#grid-main,
+#grid-aside {
+    grid-row: 2/3;
+    height: 90vh;
+}
+
+
+@media screen and (max-width:480px) {
+
+    #grid-container > *{
+        grid-column: 1/4;
+        grid-row: unset;
+    }
+
+    #grid-nav,#grid-aside  {
+        height: 5vh;
+    }
+
+    #grid-main{
+        height: 80vh;
+    }
+
+}
